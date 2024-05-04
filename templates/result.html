@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2F4F4F;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2F4F4F;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #87CEEB;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #8B4513;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Churn Prediction Form</h1>
+    <form action="/predict" method="post">
+        <!-- France -->
+        <label for="France">France</label>
+        <input type="number" id="France" name="France" required><br><br>
+
+        <!-- Spain -->
+        <label for="Spain">Spain</label>
+        <input type="number" id="Spain" name="Spain" required><br><br>
+
+        <!-- Germany -->
+        <label for="Germany">Germany</label>
+        <input type="number" id="Germany" name="Germany" required><br><br>
+
+        <!-- Credit Score -->
+        <label for="CreditScore">Credit Score</label>
+        <input type="number" id="CreditScore" name="CreditScore" required><br><br>
+
+        <!-- Gender -->
+        <label for="Gender">Gender</label>
+        <select id="Gender" name="Gender" required>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select><br><br>
+
+        <!-- Age -->
+        <label for="Age">Age</label>
+        <input type="number" id="Age" name="Age" required><br><br>
+
+        <!-- Tenure -->
+        <label for="Tenure">Tenure</label>
+        <input type="number" id="Tenure" name="Tenure" required><br><br>
+
+        <!-- Balance -->
+        <label for="Balance">Balance</label>
+        <input type="number" id="Balance" name="Balance" step="0.01" required><br><br>
+
+        <!-- Number of Products -->
+        <label for="NumOfProducts">Number of Products</label>
+        <input type="number" id="NumOfProducts" name="NumOfProducts" required><br><br>
+
+        <!-- Has Credit Card -->
+        <label for="HasCrCard">Has Credit Card</label>
+        <select id="HasCrCard" name="HasCrCard" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <!-- Is Active Member -->
+        <label for="IsActiveMember">Is Active Member</label>
+        <select id="IsActiveMember" name="IsActiveMember" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <!-- Estimated Salary -->
+        <label for="EstimatedSalary">Estimated Salary</label>
+        <input type="number" id="EstimatedSalary" name="EstimatedSalary" step="0.01" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    </select><br><br>
+    <h3>Prediction is: {{churn_result}}</h3>
+</body>
+</html>
